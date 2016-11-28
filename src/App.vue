@@ -28,7 +28,9 @@
         <div class="col-md-7">
           <router-view></router-view>
         </div>
-        <div class="col-md-5"></div>
+        <div class="col-md-5">
+          已输入乘客人数：{{passengerCount}}，已校验乘客人数：{{passengerValidated}}
+        </div>
       </div>
     </div>
   </div>
@@ -36,6 +38,7 @@
 
 <script>
   import Hello from './components/Hello'
+  import store from './vuex/store'
 
   export default {
     data () {
@@ -43,6 +46,14 @@
         navbarCollapsed: false
       }
     },
+    vuex: {
+      getters: {
+        passengers: state => state.passengers,
+        passengerValidated: state => state.passengerValidated,
+        passengerCount: state => state.passengers.length
+      }
+    },
+    store,
     components: {
       Hello
     }

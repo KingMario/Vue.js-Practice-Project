@@ -29,7 +29,8 @@
           <router-view></router-view>
         </div>
         <div class="col-md-5">
-          已输入乘客人数：{{passengerCount}}，已校验乘客人数：{{passengerValidated}}
+          <component :is="flights.length === 1 ? 'DirectFlightInfo' : 'TransitFlightInfo'"
+                     :flights="flights"></component>
         </div>
       </div>
     </div>
@@ -37,13 +38,16 @@
 </template>
 
 <script>
-  import Hello from './components/Hello'
+  import DirectFlightInfo from './components/DirectFlightInfo'
+  import TransitFlightInfo from './components/TransitFlightInfo'
   import store from './vuex/store'
 
   export default {
     data () {
       return {
-        navbarCollapsed: false
+        navbarCollapsed: false,
+        /* global flights:false */
+        flights
       }
     },
     vuex: {
@@ -55,11 +59,14 @@
     },
     store,
     components: {
-      Hello
+      DirectFlightInfo,
+      TransitFlightInfo
     }
   }
 </script>
 
 <style lang="less">
   @import "../node_modules/bootstrap/less/bootstrap.less";
+  @import "./assets/style.less";
+  @import "./assets/helpers.less";
 </style>

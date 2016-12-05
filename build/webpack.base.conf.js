@@ -45,6 +45,10 @@ module.exports = {
         loader: 'vue'
       },
       {
+        test: /vue-strap\/.+\.js$/,
+        loader: 'babel'
+      },
+      {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,

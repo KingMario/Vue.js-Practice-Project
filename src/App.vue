@@ -25,21 +25,29 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-7 main-panel">
           <router-view></router-view>
         </div>
         <div class="col-md-5">
           <component :is="flights.length === 1 ? 'DirectFlightInfo' : 'TransitFlightInfo'"
                      :flights="flights"></component>
+          <price-info></price-info>
         </div>
+      </div>
+      <div class="m-t">
+        <button class="btn btn-primary" :disabled="$route.path === '/'" @click="prev">上一步</button>
+        <button class="btn btn-primary" :disabled="passengerCount !== passengerValidated || $route.path === '/confirm'"
+                @click="next">下一步
+        </button>
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import DirectFlightInfo from './components/DirectFlightInfo'
   import TransitFlightInfo from './components/TransitFlightInfo'
+  import PriceInfo from './components/PriceInfo'
   import store from './vuex/store'
 
   export default {
@@ -52,15 +60,39 @@
     },
     vuex: {
       getters: {
-        passengers: state => state.passengers,
         passengerValidated: state => state.passengerValidated,
         passengerCount: state => state.passengers.length
       }
     },
     store,
+    methods: {
+      prev() {
+        switch (this.$route.path) {
+          case '/services':
+            this.$router.go('/')
+            break
+          case '/confirm':
+            this.$router.go('/services')
+            break
+          default:
+        }
+      },
+      next() {
+        switch (this.$route.path) {
+          case '/':
+            this.$router.go('/services')
+            break
+          case '/services':
+            this.$router.go('/confirm')
+            break
+          default:
+        }
+      }
+    },
     components: {
       DirectFlightInfo,
-      TransitFlightInfo
+      TransitFlightInfo,
+      PriceInfo
     }
   }
 </script>

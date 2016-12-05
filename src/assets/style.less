@@ -1,4 +1,8 @@
-.flight-info {
+.main-panel {
+  background-color: #eaf0f3;
+}
+
+.flight-info, .price-info {
   position: relative;
   min-width: 400px;
   max-width: 450px;
@@ -8,7 +12,7 @@
   background-color: #eaf0f3;
 }
 
-.supplier {
+.supplier, .delete-pax {
   position: absolute;
   right: 20px;
   margin-top: 20px;
@@ -21,7 +25,7 @@
 }
 
 .supplier-text::before {
-  content: '供';
+  content: "供";
   font-size: 14px;
   position: absolute;
   top: 8px;
@@ -58,7 +62,7 @@
 .shared-flight-title {
   margin-left: 8px;
   &::before {
-    content: '↳共享航班：';
+    content: "↳共享航班：";
   }
 }
 
@@ -102,7 +106,7 @@
   color: #c5ced3;
   background-color: #dbe2ea;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: -2px;
@@ -113,7 +117,7 @@
     background: #dbe2ea;
   }
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     top: -2px;
@@ -150,10 +154,58 @@
 }
 
 .overmidnight-text::before {
-  content: '+1天';
+  content: "+1天";
 }
 
 .transit-expand-toggle {
   color: #8ab5f1;
   cursor: pointer;
+}
+
+.price-info {
+  padding: 20px 40px;
+  color: #234;
+
+  .cost-detail {
+    padding: 10px 0;
+    border-top: 1px dashed #b4c4d6;
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  .cost-item {
+    position: relative;
+    line-height: 2;
+
+    .cost {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      .num {
+        color: #849bab;
+      }
+    }
+  }
+
+  .total {
+    margin: 0 -30px;
+    padding: 13px 30px 0;
+    color: #ff7d13;
+    font-size: 35px;
+    font-weight: 700;
+    border-top: 1px solid #e0e5e7;
+    margin-top: -1px;
+
+    dfn {
+      font-size: 18px;
+    }
+  }
+
+  dfn {
+    font-style: normal;
+    font-family: Arial,Tahoma,sans-serif;
+  }
 }

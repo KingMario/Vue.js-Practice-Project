@@ -20,10 +20,34 @@ const state = {
   }
 }
 
+const ADD_PASSENGER = (state) => {
+  state.passengers.push({
+    name: '',
+    idType: 'ID_Type_01',
+    cardNumber: '',
+    birthday: '',
+    type: 'ADU',
+    validated: false
+  })
+  state.passengerTypes.ADU++
+}
 const mutations = {
-  ADD_PASSENGER (state, passenger) {
-    state.passengers.push(passenger)
-    state.passengerTypes[passenger.type]++
+  ADD_PASSENGER,
+  UPDATE_PASSENGER_VALIDATED (state, validated) {
+    validated ? state.passengerValidated++ : state.passengerValidated--
+  },
+  UPDATE_PASSENGER_TYPE (state, oldType, newType) {
+    state.passengerTypes[oldType]--
+    newType && state.passengerTypes[newType]++
+  },
+  DELETE_PASSENGE (state, passenger) {
+    state.passengerTypes[passenger.type]--
+    const index = state.passengers.indexOf(passenger)
+    state.passengers.splice(index, 1)
+
+    if (state.passengers.length === 0) {
+      ADD_PASSENGER(state)
+    }
   }
 }
 

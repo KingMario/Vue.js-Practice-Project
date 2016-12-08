@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
+    "server-mock": "json-server server-files/db.json",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
@@ -16,10 +17,12 @@
     "babel-runtime": "^6.0.0",
     "bootstrap": "^3.3.7",
     "date-fns": "^1.11.2",
+    "promise-polyfill": "^6.0.2",
     "vue": "^1.0.21",
     "vue-router": "^0.7.13",
     "vue-strap": "^1.1.34",
-    "vuex": "^1.0.0"
+    "vuex": "^1.0.0",
+    "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -51,6 +54,7 @@
     "inject-loader": "^2.0.1",
     "isparta-loader": "^2.0.0",
     "json-loader": "^0.5.4",
+    "json-server": "^0.9.3",
     "karma": "^0.13.15",
     "karma-coverage": "^0.5.5",
     "karma-mocha": "^0.2.2",

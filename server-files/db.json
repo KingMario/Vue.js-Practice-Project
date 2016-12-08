@@ -1,0 +1,70 @@
+{
+  "insurances": [{
+    "id": 1,
+    "name": "航空组合险",
+    "price": "40",
+    "description": "航空意外伤害最高100万，指被保险人持有效机票检票并进入保单载明的合法商业运营的客运飞机客舱时起至抵达机票载明的终点离开客运飞机客舱的期间内遭受意外伤害所导致的保险责任；航班延误投保人必须乘坐投保航班且航班抵达目的地时延误3小时及以上赔偿300元；返航或备降赔偿300元；航班取消赔偿100元"
+  }, {
+    "id": 2,
+    "name": "航空意外险",
+    "price": "30",
+    "description": "航空意外伤害保险责任320万元/航段（国航直销产品120万元/航段），指被保险人持有效机票检票并进入保单载明的合法商业运营的客运飞机客舱时起至抵达机票载明的终点离开客运飞机客舱的期间内遭受意外伤害所导致的保险责任"
+  }, {
+    "id": 3,
+    "name": "延误取消险",
+    "price": "20",
+    "description": "投保人必须乘坐投保航班且航班抵达目的地时延误3小时及以上赔偿300元；发生返航或备降，赔偿300元；航班被取消赔偿100元"
+  }, {
+    "id": 4,
+    "name": "无忧退票险",
+    "price": "20",
+    "description": "赔偿退票损失金额的80%，最高不超过人民币2000元",
+    "adultOnly": true
+  }],
+  "airportServices": [{
+    "id": 1,
+    "name": "贵宾休息室",
+    "price": "29",
+    "freeForBaby": true
+  }, {
+    "id": 2,
+    "name": "快速安检通道",
+    "price": "15"
+  }],
+  "carServices": [{
+    "id": 1,
+    "serviceType": 1,
+    "time": "2016-10-31 17:55",
+    "name": "送机服务",
+    "packages": [{
+      "seatCount": 5,
+      "vehicleType": "五座商务车",
+      "price": 63
+    }, {
+      "seatCount": 7,
+      "vehicleType": "七座商务车",
+      "price": 81
+    }, {
+      "seatCount": 11,
+      "vehicleType": "十一座商务车",
+      "price": 126
+    }]
+  }, {
+    "id": 2,
+    "serviceType": 2,
+    "name": "接机服务",
+    "packages": [{
+      "seatCount": 5,
+      "vehicleType": "五座商务车",
+      "price": 40
+    }, {
+      "seatCount": 7,
+      "vehicleType": "七座商务车",
+      "price": 60
+    }, {
+      "seatCount": 11,
+      "vehicleType": "十一座商务车",
+      "price": "100"
+    }]
+  }]
+}

@@ -26,7 +26,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-7 main-panel">
-          <router-view></router-view>
+          <router-view keep-alive></router-view>
         </div>
         <div class="col-md-5">
           <component :is="flights.length === 1 ? 'DirectFlightInfo' : 'TransitFlightInfo'"

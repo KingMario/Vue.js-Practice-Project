@@ -17,6 +17,11 @@ const state = {
     ADU: 1,
     CHI: 0,
     BAB: 0
+  },
+  services: {
+    insurances: [],
+    airportServices: [],
+    carServices: []
   }
 }
 

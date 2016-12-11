@@ -53,9 +53,7 @@
         </div>
       </div>
     </div>
-    <div class="container" v-else>
-      已完成
-    </div>
+    <Finished class="container" v-else></Finished>
   </div>
 </template>
 
@@ -63,6 +61,7 @@
   import DirectFlightInfo from './components/DirectFlightInfo'
   import TransitFlightInfo from './components/TransitFlightInfo'
   import PriceInfo from './components/PriceInfo'
+  import Finished from './components/Finished'
   import store from './vuex/store'
 
   export default {
@@ -109,7 +108,8 @@
     components: {
       DirectFlightInfo,
       TransitFlightInfo,
-      PriceInfo
+      PriceInfo,
+      Finished
     }
   }
 </script>

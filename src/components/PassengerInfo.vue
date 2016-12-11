@@ -48,7 +48,13 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import DatePicker from 'vue-strap/src/Datepicker'
+  var DatePicker = {
+    props: ['placeholder', 'format', 'value'],
+    template: '<div>This is a fake component</div>'
+  }
+  if (process.env.NODE_ENV !== 'testing') {
+    DatePicker = require('vue-strap/src/Datepicker')
+  }
   import idCardValidate from '../js/passengerInfo/idCardValidate'
   import format from 'date-fns/format'
   import differenceInYears from 'date-fns/difference_in_years'

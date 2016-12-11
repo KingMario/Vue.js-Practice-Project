@@ -46,6 +46,7 @@ const mutations = {
     newType && state.passengerTypes[newType]++
   },
   DELETE_PASSENGE (state, passenger) {
+    passenger.validated && state.passengerValidated--
     state.passengerTypes[passenger.type]--
     const index = state.passengers.indexOf(passenger)
     state.passengers.splice(index, 1)

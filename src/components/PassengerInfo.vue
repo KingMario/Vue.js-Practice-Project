@@ -49,29 +49,17 @@
 
 <script type="text/ecmascript-6">
   import DatePicker from 'vue-strap/src/Datepicker'
-  import idCardValidate from '../js/idCardValidate'
+  import idCardValidate from '../js/passengerInfo/idCardValidate'
   import format from 'date-fns/format'
   import differenceInYears from 'date-fns/difference_in_years'
   import {updatePassengerValidated, updatePassengerType, deletePassenger} from '../vuex/actions'
+  import {idTypes, idTypesHasBirthday} from '../js/passengerInfo/passengerInfoConsts'
 
   export default {
     data () {
       return {
-        idTypes: {
-          'ID_Type_01': '身份证',
-          'ID_Type_02': '护照',
-          'ID_Type_03': '军人证',
-          'ID_Type_04': '回乡证',
-          'ID_Type_05': '台胞证',
-          'ID_Type_06': '港澳通行证',
-          'ID_Type_07': '户口簿',
-          'ID_Type_08': '出生证明',
-          'ID_Type_09': '其它'
-        },
-        idTypesHasBirthday: [
-          'ID_Type_01',
-          'ID_Type_07'
-        ],
+        idTypes,
+        idTypesHasBirthday,
         cardNumberTouched: false
       }
     },

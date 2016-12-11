@@ -40,17 +40,14 @@
 <script type="text/ecmascript-6">
   import PriceItem from './PriceItem'
   import reduce from 'lodash/reduce'
+  import {passengerTypeNames} from '../js/passengerInfo/passengerInfoConsts'
 
   export default {
     data () {
       return {
         /* global priceInfo:false */
         priceInfo,
-        passengerTypeNames: {
-          ADU: '成人',
-          CHI: '儿童',
-          BAB: '婴儿'
-        }
+        passengerTypeNames
       }
     },
     vuex: {
